@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Nawigacja */
+.navbar {
+    background: linear-gradient(90deg, #004aad, #007bff);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffeb3b;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Sekcja główna */
+.hero {
+    height: 100vh;
+    background: url('../images/background.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-button {
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+/* Galeria */
+.gallery {
+    padding: 4rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #004aad;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Statystyki */
+.stats {
+    padding: 2rem;
+    text-align: center;
+    background: #004aad;
+    color: white;
+}
+
+.stats h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#visit-counter {
+    font-size: 1.5rem;
+}
+
+/* Formularz kontaktowy */
+.contact {
+    padding: 4rem 2rem;
+    background-color: #f0f2f5;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #004aad;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#contact-form button {
+    align-self: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+}
+
+.modal-content {
+    background: white;
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    animation: slideIn 0.5s ease;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Stopka */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+.social-links a {
+    color: #4CAF50;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #004aad;
+        padding: 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .burger {
+        display: block;
+    }
+    .carousel-item {
+        height: 200px;
+    }
+}

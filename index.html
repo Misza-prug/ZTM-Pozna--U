@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZTM Poznań Urbanmove - Roblox</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="ZTM Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Strona Główna</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Sekcja główna -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>ZTM Poznań Urbanmove</h1>
+            <p>Poczuj się jak prawdziwy kierowca komunikacji miejskiej w realistycznej grze na Roblox!</p>
+            <a href="https://www.roblox.com/games/7590476084/ZTM-Pozna-Urbanmove" class="cta-button" target="_blank">Zagraj teraz!</a>
+            <button class="info-button" onclick="openModal()">Dowiedz się więcej</button>
+        </div>
+    </section>
+
+    <!-- Galeria (karuzela) -->
+    <section id="gallery" class="gallery">
+        <h2>Galeria z gry</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="images/screenshot1.jpg" alt="ZTM Gameplay 1" class="carousel-item" loading="lazy">
+                <img src="images/screenshot2.jpg" alt="ZTM Gameplay 2" class="carousel-item" loading="lazy">
+                <img src="images/screenshot3.jpg" alt="ZTM Gameplay 3" class="carousel-item" loading="lazy">
+            </div>
+            <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Licznik odwiedzin -->
+    <section class="stats">
+        <h2>Popularność gry</h2>
+        <p id="visit-counter">Odwiedziny gry: <span id="visit-count">0</span></p>
+    </section>
+
+    <!-- Formularz kontaktowy -->
+    <section id="contact" class="contact">
+        <h2>Skontaktuj się z nami</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Imię" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Wiadomość" required></textarea>
+            <button type="submit" class="cta-button">Wyślij</button>
+        </form>
+    </section>
+
+    <!-- Modal -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>O ZTM Poznań Urbanmove</h2>
+            <p>ZTM Poznań Urbanmove to gra na Roblox, która wiernie odwzorowuje trasy autobusowe i tramwajowe Poznania. Została stworzona przez @FredrixPL i wydana 28 września 2021 roku. Wykorzystuje system Urbanmove i PEKA, oferując realistyczne sterowanie i rozgrywkę.</p>
+        </div>
+    </div>
+
+    <!-- Stopka -->
+    <footer>
+        <p>© 2025 ZTM Poznań Urbanmove. Wszystkie prawa zastrzeżone.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/ZTMPoznanUrbanmove/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/ztmpoznanurbanmove/" target="_blank">Instagram</a>
+            <a href="https://discord.gg/VDJhfGrxwv" target="_blank">Discord</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
