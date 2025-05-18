@@ -14,7 +14,7 @@ const totalSlides = slides.length;
 function moveSlide(step) {
     slideIndex = (slideIndex + step + totalSlides) % totalSlides;
     const offset = -slideIndex * 100;
-    document.querySelector('.carousel-inner').style.transform = translateX(${offset}%);
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`; // ← poprawka: brakowało ``
 }
 
 // Automatyczna karuzela
@@ -43,7 +43,7 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     const message = document.getElementById('message').value;
 
     if (name && email && message) {
-        alert(Dziękujemy, ${name}! Twoja wiadomość została wysłana.);
+        alert(`Dziękujemy, ${name}! Twoja wiadomość została wysłana.`); // ← poprawka: brakowało ``
         document.getElementById('contact-form').reset();
     } else {
         alert('Proszę wypełnić wszystkie pola!');
@@ -56,10 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.src = entry.target.src; // Trigger loading
-                observer.unobserve(entry.target);
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src; // ← jeśli używasz data-src
+                }
+                observer.unobserve(img);
             }
         });
     });
+
     images.forEach(image => observer.observe(image));
 });
